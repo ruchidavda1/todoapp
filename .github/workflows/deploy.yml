@@ -37,7 +37,7 @@ jobs:
         cache: 'npm'
         cache-dependency-path: backend/package-lock.json
     
-    - name: 📦 Install Backend Dependencies
+    - name: Install Backend Dependencies
       run: |
         cd backend
         npm ci
@@ -55,14 +55,14 @@ jobs:
         DB_PASSWORD: postgres
         JWT_SECRET: test-secret-key-for-ci-cd-pipeline
 
-    - name: 🏗️ Build Backend
+    - name:  Build Backend
       run: |
         cd backend
         echo "Backend build completed successfully"
 
   # Job 2: Test Frontend  
   test-frontend:
-    name: 📱 Test Frontend
+    name: Test Frontend
     runs-on: ubuntu-latest
 
     steps:
@@ -76,7 +76,7 @@ jobs:
         cache: 'npm'
         cache-dependency-path: frontend/TodoApp/package-lock.json
     
-    - name: 📦 Install Frontend Dependencies
+    - name: Install Frontend Dependencies
       run: |
         cd frontend/TodoApp
         npm ci
@@ -88,7 +88,7 @@ jobs:
       env:
         CI: true
 
-    - name: 🏗️ Build Frontend (React Native)
+    - name: Build Frontend (React Native)
       run: |
         cd frontend/TodoApp
         echo "Frontend build validation completed"

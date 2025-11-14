@@ -1,15 +1,14 @@
-# 📱 Full-Stack Todo Application
+# Full-Stack Todo Application
 
 A complete full-stack mobile Todo application built with React Native frontend and Node.js backend, featuring authentication, CRUD operations, and modern UI/UX design.
 
-## 🎉 **LIVE APPLICATION**
-- **Backend API:** `https://todoapp-2zsx.onrender.com/api`
+## Live Application
+- **Backend API:** https://todoapp-2zsx.onrender.com/api
 - **Database:** PostgreSQL on Render
-- **Status:** ✅ Fully deployed and working
+- **Status:** Fully deployed and working
 
-## 📱 **Screenshots**
+## Screenshots
 
-### iOS App Interface
 <div align="center">
   <img src="screenshots/ios-login.png" alt="Login Screen" width="250"/>
   <img src="screenshots/ios-signup.png" alt="Signup Screen" width="250"/>
@@ -22,65 +21,53 @@ A complete full-stack mobile Todo application built with React Native frontend a
   <img src="screenshots/ios-dark-mode.png" alt="Dark Mode" width="250"/>
 </div>
 
-### Key Features Demo
-<div align="center">
-  <img src="screenshots/feature-auth.gif" alt="Authentication Flow" width="250"/>
-  <img src="screenshots/feature-crud.gif" alt="Todo CRUD Operations" width="250"/>
-  <img src="screenshots/feature-theme.gif" alt="Theme Switching" width="250"/>
-</div>
-
-### Backend API Testing
-<div align="center">
-  <img src="screenshots/api-postman.png" alt="API Testing with Postman" width="600"/>
-</div>
-
-## 🚀 **Features**
+## Features
 
 ### Frontend (React Native)
-- ✅ **Authentication**: Login/Signup with JWT tokens
-- ✅ **Todo Management**: Complete CRUD operations
-- ✅ **Modern UI**: Clean, responsive design with animations
-- ✅ **Theme Switching**: Light and dark mode support
-- ✅ **State Management**: MobX for reactive state management
-- ✅ **Navigation**: React Navigation with stack and tab navigators
-- ✅ **Priority System**: Low, medium, high priority todos
-- ✅ **Profile Management**: Update user profile information
+- Authentication: Login/Signup with JWT tokens
+- Todo Management: Complete CRUD operations
+- Modern UI: Clean, responsive design with animations
+- Theme Switching: Light and dark mode support
+- State Management: MobX for reactive state management
+- Navigation: React Navigation with stack and tab navigators
+- Priority System: Low, medium, high priority todos
+- Profile Management: Update user profile information
 
 ### Backend (Node.js + Express)
-- ✅ **RESTful APIs**: Complete CRUD operations for todos and authentication
-- ✅ **JWT Authentication**: Secure token-based authentication
-- ✅ **PostgreSQL Database**: Robust data persistence with Sequelize ORM
-- ✅ **Input Validation**: Comprehensive validation and error handling
-- ✅ **Security**: Helmet, CORS, and bcrypt for password hashing
-- ✅ **Middleware**: Authentication middleware for protected routes
-- ✅ **Docker Support**: Containerized application for easy deployment
+- RESTful APIs: Complete CRUD operations for todos and authentication
+- JWT Authentication: Secure token-based authentication
+- PostgreSQL Database: Robust data persistence with Sequelize ORM
+- Input Validation: Comprehensive validation and error handling
+- Security: Helmet, CORS, and bcrypt for password hashing
+- Middleware: Authentication middleware for protected routes
+- Docker Support: Containerized application for easy deployment
 
-## 🛠 **Tech Stack**
+## Tech Stack
 
 ### Frontend
-- **React Native** 0.81.5
-- **TypeScript** for type safety
-- **MobX** for state management
-- **React Navigation** for routing
-- **Axios** for HTTP requests
-- **AsyncStorage** for local data persistence
+- React Native 0.81.5
+- TypeScript for type safety
+- MobX for state management
+- React Navigation for routing
+- Axios for HTTP requests
+- AsyncStorage for local data persistence
 
 ### Backend
-- **Node.js** with Express.js
-- **PostgreSQL** database
-- **Sequelize** ORM
-- **JWT** for authentication
-- **bcryptjs** for password hashing
-- **Helmet** for security headers
-- **CORS** for cross-origin requests
-- **Morgan** for logging
+- Node.js with Express.js
+- PostgreSQL database
+- Sequelize ORM
+- JWT for authentication
+- bcryptjs for password hashing
+- Helmet for security headers
+- CORS for cross-origin requests
+- Morgan for logging
 
 ### DevOps
-- **Docker** & Docker Compose
-- **Render** for deployment
-- **ESLint** & Prettier for code quality
+- Docker & Docker Compose
+- Render for deployment
+- ESLint & Prettier for code quality
 
-## 📁 **Project Structure**
+## Project Structure
 
 ```
 todo-app/
@@ -111,7 +98,7 @@ todo-app/
 └── README.md               # This file
 ```
 
-## 🚦 **Getting Started**
+## Getting Started
 
 ### Prerequisites
 - Node.js (v18 or higher)
@@ -189,13 +176,13 @@ todo-app/
 4. **Start the React Native app**
    ```bash
    # iOS
-   npx react-native run-ios
+   npx react-native run-ios --simulator="iPhone 15" (example)
    
    # Android
    npx react-native run-android
    ```
 
-## 🔧 **API Endpoints**
+## API Endpoints
 
 ### Authentication
 - `POST /api/auth/signup` - Create new user account
@@ -219,7 +206,7 @@ todo-app/
 - `priority` - Filter by priority (low/medium/high)
 - `search` - Search in title and description
 
-## 🎨 **App Features**
+## App Features
 
 ### Authentication
 - JWT token-based authentication
@@ -242,7 +229,7 @@ todo-app/
 - Responsive design for different screen sizes
 - Real-time backend synchronization
 
-## 🐳 **Docker Commands**
+## Docker Commands
 
 ```bash
 # Start development environment
@@ -264,7 +251,7 @@ docker-compose up --build -d
 docker-compose down -v
 ```
 
-## 🧪 **Testing**
+## Testing
 
 ### Backend Testing
 ```bash
@@ -278,7 +265,7 @@ cd frontend/TodoApp
 npm test
 ```
 
-## 🚀 **Deployment**
+## Deployment
 
 The application is configured for deployment on Render using the included `render.yaml` configuration.
 
@@ -295,7 +282,7 @@ The API service automatically switches between development and production URLs:
 - Development: `http://localhost:3000/api`
 - Production: `https://todoapp-2zsx.onrender.com/api`
 
-## 🔒 **Security Features**
+## Security Features
 
 - JWT token authentication
 - Password hashing with bcrypt
@@ -304,42 +291,5 @@ The API service automatically switches between development and production URLs:
 - Security headers with Helmet
 - SQL injection prevention with Sequelize ORM
 
-## 🤝 **Contributing**
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📄 **License**
-
-This project is licensed under the MIT License.
-
-## 🙏 **Acknowledgments**
-
-- React Native community for excellent documentation
-- MobX team for reactive state management
-- Express.js for the robust backend framework
-- PostgreSQL for reliable data persistence
-
-## 📋 **Quick Screenshot Checklist**
-
-To complete the README documentation, capture these screenshots:
-
-- [ ] **ios-login.png** - Login screen with email/password fields
-- [ ] **ios-signup.png** - Signup screen with registration form
-- [ ] **ios-todos.png** - Main todo list with several todos
-- [ ] **ios-add-todo.png** - Add/edit todo screen
-- [ ] **ios-profile.png** - User profile management screen
-- [ ] **ios-dark-mode.png** - App in dark mode
-- [ ] **feature-auth.gif** - Login/signup flow demonstration
-- [ ] **feature-crud.gif** - Adding, editing, completing, deleting todos
-- [ ] **feature-theme.gif** - Switching between light and dark themes
-- [ ] **api-postman.png** - Backend API testing in Postman
-
-**Tip**: Use `Cmd + S` in iOS Simulator to quickly save screenshots!
-
----
-
-**Built with ❤️ for modern full-stack development**
+Built with modern full-stack development practices

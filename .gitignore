@@ -155,6 +155,7 @@ index.ios.bundle
 
 # Ruby Bundle (if using Bundler)
 vendor/bundle/
+.bundle/
 
 # CocoaPods
 /ios/Pods/

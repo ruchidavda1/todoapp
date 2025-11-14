@@ -1,0 +1,33 @@
+{
+  "name": "todo-app-monorepo",
+  "version": "1.0.0",
+  "description": "Full-stack Todo application with React Native frontend and Node.js backend",
+  "scripts": {
+    "install-backend": "cd backend && npm install",
+    "install-frontend": "cd frontend/TodoApp && npm install",
+    "install-all": "npm run install-backend && npm run install-frontend",
+    "start": "cd backend && npm start",
+    "dev": "cd backend && npm run dev",
+    "test": "cd backend && npm test",
+    "build": "cd backend && npm install --production",
+    "deploy": "./deploy.sh"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "todo",
+    "react-native",
+    "nodejs",
+    "express",
+    "postgresql",
+    "jwt",
+    "mobx"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ruchidavda1/todoapp.git"
+  }
+}

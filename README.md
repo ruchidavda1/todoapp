@@ -65,12 +65,23 @@ npm start
 ```
 
 ### Frontend Setup
+
+#### iOS Setup
 ```bash
 cd frontend/TodoApp
 npm install
 cd ios && pod install && cd ..
 npx react-native run-ios
 ```
+
+#### Android Setup
+```bash
+cd frontend/TodoApp
+npm install
+npx react-native run-android
+```
+
+**Note:** Ensure Android Studio and Android SDK are installed, and an Android emulator is running or device is connected.
 
 ### Docker Setup (Alternative)
 ```bash
@@ -107,6 +118,4 @@ The application is fully deployed and accessible:
 - PostgreSQL database is configured
 - Frontend connects to production API
 
-## 📄 License
 
-MIT License

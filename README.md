@@ -316,34 +316,10 @@ const BASE_URL = __DEV__
 
 ## 📱 Screenshots
 
-*Add screenshots of your app here*
 
-## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
-## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
-
-- React Native community for excellent documentation
-- MobX team for reactive state management
-- Express.js for the robust backend framework
-- PostgreSQL for reliable data persistence
-
-## 📞 Support
-
-If you have any questions or run into issues, please:
-1. Check the existing issues
-2. Create a new issue with detailed information
-3. Include steps to reproduce the problem
-
----
 
 **Built with ❤️ for the Full-Stack Developer Challenge**

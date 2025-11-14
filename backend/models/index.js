@@ -10,13 +10,21 @@ const sequelize = process.env.DATABASE_URL
         ssl: process.env.NODE_ENV === 'production' ? {
           require: true,
           rejectUnauthorized: false
-        } : false
+        } : false,
+        // Additional connection options for stability
+        keepAlive: true,
+        keepAliveInitialDelayMillis: 0,
       },
       pool: {
         max: 5,
         min: 0,
-        acquire: 30000,
-        idle: 10000
+        acquire: 60000, // Increased timeout
+        idle: 10000,
+        evict: 1000,
+        handleDisconnects: true
+      },
+      retry: {
+        max: 3
       }
     })
   : new Sequelize({

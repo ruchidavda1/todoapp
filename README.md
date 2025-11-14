@@ -1,349 +1,112 @@
 # Full-Stack Todo Application
 
-A complete full-stack mobile Todo application built with React Native frontend and Node.js backend, featuring authentication, CRUD operations, and modern UI/UX design.
+A complete mobile Todo application with React Native frontend and Node.js backend.
+
+## 🎉 **LIVE APPLICATION**
+- **Backend API:** `https://todoapp-2zsx.onrender.com/api`
+- **Database:** PostgreSQL on Render
+- **Status:** ✅ Fully deployed and working
 
 ## 🚀 Features
 
 ### Frontend (React Native)
-- **Authentication**: Sign up and login screens with form validation
-- **Todo Management**: Create, read, update, delete todos
-- **Modern UI**: Clean, responsive design with smooth animations
-- **Dark Theme**: Toggle between light and dark themes
-- **State Management**: MobX for reactive state management
-- **Navigation**: React Navigation with stack and tab navigators
-- **Priority System**: Low, medium, high priority todos
-- **Search & Filter**: Search todos and filter by completion status
-- **Profile Management**: Update user profile information
+- Authentication (Login/Signup)
+- Todo CRUD operations
+- Dark/Light theme switching
+- MobX state management
+- React Navigation
+- Modern UI/UX
 
 ### Backend (Node.js + Express)
-- **RESTful APIs**: Complete CRUD operations for todos and authentication
-- **JWT Authentication**: Secure token-based authentication
-- **PostgreSQL Database**: Robust data persistence with Sequelize ORM
-- **Input Validation**: Comprehensive validation and error handling
-- **Security**: Helmet, CORS, and bcrypt for password hashing
-- **Middleware**: Authentication middleware for protected routes
-- **Docker Support**: Containerized application for easy deployment
+- RESTful APIs
+- JWT Authentication
+- PostgreSQL with Sequelize ORM
+- Input validation & security
+- Docker support
 
 ## 🛠 Tech Stack
 
-### Frontend
-- **React Native** 0.82.1
-- **TypeScript** for type safety
-- **MobX** for state management
-- **React Navigation** for routing
-- **Axios** for HTTP requests
-- **AsyncStorage** for local data persistence
-
-### Backend
-- **Node.js** with Express.js
-- **PostgreSQL** database
-- **Sequelize** ORM
-- **JWT** for authentication
-- **bcryptjs** for password hashing
-- **Helmet** for security headers
-- **CORS** for cross-origin requests
-- **Morgan** for logging
-
-### DevOps
-- **Docker** & Docker Compose
-- **ESLint** & Prettier for code quality
+**Frontend:** React Native, TypeScript, MobX, React Navigation, Axios  
+**Backend:** Node.js, Express, PostgreSQL, Sequelize, JWT, bcrypt  
+**DevOps:** Docker, Render
 
 ## 📁 Project Structure
 
 ```
 todo-app/
-├── backend/                 # Node.js backend
-│   ├── middleware/         # Authentication middleware
-│   ├── models/            # Sequelize models
-│   ├── routes/            # API routes
-│   ├── server.js          # Main server file
-│   ├── Dockerfile         # Docker configuration
-│   └── package.json       # Backend dependencies
-├── frontend/              # React Native frontend
-│   └── TodoApp/
-│       ├── src/
-│       │   ├── components/    # Reusable components
-│       │   ├── navigation/    # Navigation setup
-│       │   ├── screens/       # App screens
-│       │   ├── services/      # API services
-│       │   ├── stores/        # MobX stores
-│       │   ├── types/         # TypeScript types
-│       │   └── utils/         # Utility functions
-│       ├── App.tsx           # Main app component
-│       └── package.json      # Frontend dependencies
-├── docker-compose.yml        # Development setup
-├── docker-compose.prod.yml   # Production setup
-└── README.md                # This file
+├── backend/                 # Node.js API server
+│   ├── models/             # Sequelize models
+│   ├── routes/             # API routes
+│   ├── middleware/         # Auth middleware
+│   └── server.js           # Main server
+├── frontend/TodoApp/        # React Native app
+│   ├── src/
+│   │   ├── components/     # UI components
+│   │   ├── screens/        # App screens
+│   │   ├── navigation/     # Navigation setup
+│   │   ├── stores/         # MobX stores
+│   │   └── services/       # API services
+│   └── App.tsx            # Main app component
+└── docker-compose.yml      # Docker setup
 ```
 
 ## 🚦 Getting Started
 
 ### Prerequisites
-- Node.js (v18 or higher)
-- PostgreSQL (v12 or higher)
+- Node.js (v18+)
 - React Native development environment
-- Docker & Docker Compose (optional)
+- Docker (optional)
 
-### 🎉 **CURRENT STATUS: FULLY DEPLOYED & WORKING!**
-- ✅ **Backend:** Live at `https://todoapp-2zsx.onrender.com/api`
-- ✅ **Database:** PostgreSQL on Render (all 8 API endpoints working)
-- ✅ **Frontend:** Complete React Native app with all features restored
-- ✅ **Features:** Authentication, CRUD, Navigation, Theming, State Management
+### Backend Setup
+```bash
+cd backend
+npm install
+npm start
+```
 
-### Option 1: Docker Setup (Recommended)
+### Frontend Setup
+```bash
+cd frontend/TodoApp
+npm install
+cd ios && pod install && cd ..
+npx react-native run-ios
+```
 
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd todo-app
-   ```
-
-2. **Start the application with Docker**
-   ```bash
-   # Development mode
-   docker-compose up -d
-   
-   # Production mode
-   docker-compose -f docker-compose.prod.yml up -d
-   ```
-
-3. **The backend will be available at:**
-   - API: http://localhost:3000
-   - Health check: http://localhost:3000/api/health
-
-### Option 2: Manual Setup
-
-#### Backend Setup
-
-1. **Navigate to backend directory**
-   ```bash
-   cd backend
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Set up PostgreSQL database**
-   ```bash
-   # Create database
-   createdb todo_app
-   ```
-
-4. **Configure environment variables**
-   ```bash
-   cp .env.example .env
-   # Edit .env with your database credentials
-   ```
-
-5. **Start the server**
-   ```bash
-   # Development
-   npm run dev
-   
-   # Production
-   npm start
-   ```
-
-#### Frontend Setup
-
-1. **Navigate to frontend directory**
-   ```bash
-   cd frontend/TodoApp
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Install iOS dependencies (iOS only)**
-   ```bash
-   cd ios && pod install && cd ..
-   ```
-
-4. **Update API URL**
-   - Edit `src/services/api.ts`
-   - Change `BASE_URL` to your backend URL
-
-5. **Start the React Native app**
-   ```bash
-   # iOS
-   npx react-native run-ios
-   
-   # Android
-   npx react-native run-android
-   ```
+### Docker Setup (Alternative)
+```bash
+docker-compose up -d
+```
 
 ## 🔧 API Endpoints
 
 ### Authentication
-- `POST /api/auth/signup` - Create new user account
+- `POST /api/auth/signup` - Create account
 - `POST /api/auth/login` - User login
-- `GET /api/auth/profile` - Get user profile (protected)
-- `PUT /api/auth/profile` - Update user profile (protected)
+- `GET /api/auth/profile` - Get profile
 
 ### Todos
-- `GET /api/todos` - Get all todos (protected)
-- `POST /api/todos` - Create new todo (protected)
-- `GET /api/todos/:id` - Get specific todo (protected)
-- `PUT /api/todos/:id` - Update todo (protected)
-- `PATCH /api/todos/:id/toggle` - Toggle todo completion (protected)
-- `DELETE /api/todos/:id` - Delete todo (protected)
-- `DELETE /api/todos/completed/all` - Delete all completed todos (protected)
+- `GET /api/todos` - Get all todos
+- `POST /api/todos` - Create todo
+- `PUT /api/todos/:id` - Update todo
+- `DELETE /api/todos/:id` - Delete todo
 
-### Query Parameters for GET /api/todos
-- `page` - Page number for pagination
-- `limit` - Number of items per page
-- `completed` - Filter by completion status (true/false)
-- `priority` - Filter by priority (low/medium/high)
-- `search` - Search in title and description
+## 📱 App Features
 
-## 🎨 Features Showcase
+- **Authentication Flow:** Secure login/signup
+- **Todo Management:** Full CRUD operations
+- **Theme Switching:** Light/Dark mode
+- **Responsive Design:** Clean, modern UI
+- **State Management:** Reactive MobX stores
+- **Navigation:** Stack and tab navigators
 
-### Authentication Flow
-- Clean, modern login and signup screens
-- Form validation with error handling
-- Secure JWT token storage
-- Automatic token refresh handling
+## 🌐 Live Demo
 
-### Todo Management
-- Intuitive todo creation with priority levels
-- Inline editing and deletion
-- Completion status toggle
-- Search and filtering capabilities
-- Bulk operations (delete all completed)
-
-### User Experience
-- Smooth navigation with React Navigation
-- Pull-to-refresh functionality
-- Loading states and error handling
-- Responsive design for different screen sizes
-- Dark/light theme toggle
-
-## 🐳 Docker Commands
-
-```bash
-# Start development environment
-docker-compose up -d
-
-# Start production environment
-docker-compose -f docker-compose.prod.yml up -d
-
-# View logs
-docker-compose logs -f backend
-
-# Stop services
-docker-compose down
-
-# Rebuild and start
-docker-compose up --build -d
-
-# Remove volumes (reset database)
-docker-compose down -v
-```
-
-## 🧪 Testing
-
-### Backend Testing
-```bash
-cd backend
-npm test
-```
-
-### Frontend Testing
-```bash
-cd frontend/TodoApp
-npm test
-```
-
-## 🚀 Deployment
-
-### Quick Deployment Guide
-
-1. **Run the deployment script:**
-   ```bash
-   ./deploy.sh
-   ```
-
-2. **Deploy to Render (Recommended):**
-   - Go to [Render Dashboard](https://dashboard.render.com)
-   - Click "New +" → "Blueprint"
-   - Connect your GitHub repository
-   - Use the included `render.yaml` configuration
-
-3. **Verify deployment:**
-   ```bash
-   node verify-deployment.js https://your-app-name.onrender.com/api
-   ```
-
-### Detailed Deployment Instructions
-
-See [DEPLOYMENT.md](DEPLOYMENT.md) for comprehensive deployment guide including:
-- Backend deployment to Render/Railway/Heroku
-- Frontend configuration for production
-- CI/CD pipeline setup
-- Environment variables configuration
-- Testing and verification steps
-
-### Environment Variables (Production)
-
-```bash
-NODE_ENV=production
-JWT_SECRET=your-super-secret-32-character-key
-JWT_EXPIRES_IN=7d
-DATABASE_URL=postgresql://user:password@host:port/database
-```
-
-### Frontend Configuration
-
-Update the API URL in `frontend/TodoApp/src/services/api.ts`:
-```typescript
-const BASE_URL = __DEV__ 
-  ? 'http://localhost:3000/api'
-  : 'https://your-app-name.onrender.com/api';
-```
-
-## 🔒 Security Features
-
-- JWT token authentication
-- Password hashing with bcrypt
-- Input validation and sanitization
-- CORS protection
-- Security headers with Helmet
-- SQL injection prevention with Sequelize ORM
-
-## 📱 Screenshots
-
-*Add screenshots of your app here*
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+The application is fully deployed and accessible:
+- Backend API is live at Render
+- All 8 API endpoints are functional
+- PostgreSQL database is configured
+- Frontend connects to production API
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- React Native community for excellent documentation
-- MobX team for reactive state management
-- Express.js for the robust backend framework
-- PostgreSQL for reliable data persistence
-
-## 📞 Support
-
-If you have any questions or run into issues, please:
-1. Check the existing issues
-2. Create a new issue with detailed information
-3. Include steps to reproduce the problem
-
----
-
-**Built with ❤️ for the Full-Stack Developer Challenge**
+MIT License

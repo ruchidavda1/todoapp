@@ -10,10 +10,16 @@ A complete full-stack mobile Todo application built with React Native frontend a
 ## Screenshots
 
 <div align="center">
-  <img src="screenshots/ios-login.png" alt="Login Screen" width="250"/>
-  <img src="screenshots/ios-signup.png" alt="Signup Screen" width="250"/>
-  <img src="screenshots/ios-todos.png" alt="Todo List" width="250"/>
+  <img src="screenshots/ios-add-todo.png" alt="Add Todo Screen" width="250"/>
+  <img src="screenshots/ios-create-todo.png" alt="Create Todo Screen" width="250"/>
+  <img src="screenshots/ios-dark-mode.png" alt="Dark Mode Screen" width="250"/>
+  <img src="screenshots/ios-loginpage.png" alt="Login Page" width="250"/>
+  <img src="screenshots/ios-mytodos.png" alt="My Todos Screen" width="250"/>
+  <img src="screenshots/ios-profile.png" alt="Profile Screen" width="250"/>
+  <img src="screenshots/ios-search-todo.png" alt="Search Todo Screen" width="250"/>
+  <img src="screenshots/ios-signuppage.png" alt="Signup Page" width="250"/>
 </div>
+
 
 <div align="center">
   <img src="screenshots/ios-add-todo.png" alt="Add Todo" width="250"/>

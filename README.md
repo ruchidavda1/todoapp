@@ -1,236 +1,97 @@
-# Full-Stack Todo Application
+This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-A complete mobile Todo application with React Native frontend and Node.js backend.
+# Getting Started
 
-## 🎉 **LIVE APPLICATION**
-- **Backend API:** `https://todoapp-2zsx.onrender.com/api`
-- **Database:** PostgreSQL on Render
-- **Status:** ✅ Fully deployed and working
+> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
 
-## 🚀 Features
+## Step 1: Start Metro
 
-### Frontend (React Native)
-- Authentication (Login/Signup)
-- Todo CRUD operations
-- Dark/Light theme switching
-- MobX state management
-- React Navigation
-- Modern UI/UX
+First, you will need to run **Metro**, the JavaScript build tool for React Native.
 
-### Backend (Node.js + Express)
-- RESTful APIs
-- JWT Authentication
-- PostgreSQL with Sequelize ORM
-- Input validation & security
-- Docker support
+To start the Metro dev server, run the following command from the root of your React Native project:
 
-## 🛠 Tech Stack
-
-**Frontend:** React Native, TypeScript, MobX, React Navigation, Axios  
-**Backend:** Node.js, Express, PostgreSQL, Sequelize, JWT, bcrypt  
-**DevOps:** Docker, Render
-
-## 📁 Project Structure
-
-```
-todo-app/
-├── backend/                 # Node.js API server
-│   ├── models/             # Sequelize models
-│   ├── routes/             # API routes
-│   ├── middleware/         # Auth middleware
-│   └── server.js           # Main server
-├── frontend/TodoApp/        # React Native app
-│   ├── src/
-│   │   ├── components/     # UI components
-│   │   ├── screens/        # App screens
-│   │   ├── navigation/     # Navigation setup
-│   │   ├── stores/         # MobX stores
-│   │   └── services/       # API services
-│   └── App.tsx            # Main app component
-└── docker-compose.yml      # Docker setup
-```
-
-## 🚦 Getting Started
-
-### Prerequisites
-- Node.js (v18+)
-- React Native development environment
-- Docker (optional)
-
-### Backend Setup
-```bash
-cd backend
-npm install
+```sh
+# Using npm
 npm start
+
+# OR using Yarn
+yarn start
 ```
 
-### Frontend Setup
+## Step 2: Build and run your app
 
-#### iOS Setup
-```bash
-cd frontend/TodoApp
-npm install
-cd ios && pod install && cd ..
-npx react-native run-ios
+With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+
+### Android
+
+```sh
+# Using npm
+npm run android
+
+# OR using Yarn
+yarn android
 ```
 
-#### Android Setup
-```bash
-cd frontend/TodoApp
-npm install
-npx react-native run-android
+### iOS
+
+For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+
+The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+
+```sh
+bundle install
 ```
 
-**Note:** Ensure Android Studio and Android SDK are installed, and an Android emulator is running or device is connected.
+Then, and every time you update your native dependencies, run:
 
-### Docker Setup (Alternative)
-```bash
-docker-compose up -d
+```sh
+bundle exec pod install
 ```
 
-## 🔧 API Endpoints
+For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
 
-### Authentication
-- `POST /api/auth/signup` - Create account
-- `POST /api/auth/login` - User login
-- `GET /api/auth/profile` - Get profile
+```sh
+# Using npm
+npm run ios
 
-### Todos
-- `GET /api/todos` - Get all todos (protected)
-- `POST /api/todos` - Create new todo (protected)
-- `GET /api/todos/:id` - Get specific todo (protected)
-- `PUT /api/todos/:id` - Update todo (protected)
-- `PATCH /api/todos/:id/toggle` - Toggle todo completion (protected)
-- `DELETE /api/todos/:id` - Delete todo (protected)
-- `DELETE /api/todos/completed/all` - Delete all completed todos (protected)
-
-### Query Parameters for GET /api/todos
-- `page` - Page number for pagination
-- `limit` - Number of items per page
-- `completed` - Filter by completion status (true/false)
-- `priority` - Filter by priority (low/medium/high)
-- `search` - Search in title and description
-
-## 🎨 Features Showcase
-
-### Authentication Flow
-- Clean, modern login and signup screens
-- Form validation with error handling
-- Secure JWT token storage
-- Automatic token refresh handling
-
-### Todo Management
-- Intuitive todo creation with priority levels
-- Inline editing and deletion
-- Completion status toggle
-- Search and filtering capabilities
-- Bulk operations (delete all completed)
-
-### User Experience
-- Smooth navigation with React Navigation
-- Pull-to-refresh functionality
-- Loading states and error handling
-- Responsive design for different screen sizes
-- Dark/light theme toggle
-
-## 🐳 Docker Commands
-
-```bash
-# Start development environment
-docker-compose up -d
-
-# Start production environment
-docker-compose -f docker-compose.prod.yml up -d
-
-# View logs
-docker-compose logs -f backend
-
-# Stop services
-docker-compose down
-
-# Rebuild and start
-docker-compose up --build -d
-
-# Remove volumes (reset database)
-docker-compose down -v
+# OR using Yarn
+yarn ios
 ```
 
-## 🧪 Testing
+If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
 
-### Backend Testing
-```bash
-cd backend
-npm test
-```
+This is one way to run your app — you can also build it directly from Android Studio or Xcode.
 
-### Frontend Testing
-```bash
-cd frontend/TodoApp
-npm test
-```
+## Step 3: Modify your app
 
-## 🚀 Deployment
+Now that you have successfully run the app, let's make changes!
 
-### Quick Deployment Guide
+Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
 
-1. **Run the deployment script:**
-   ```bash
-   ./deploy.sh
-   ```
+When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
 
-2. **Deploy to Render (Recommended):**
-   - Go to [Render Dashboard](https://dashboard.render.com)
-   - Click "New +" → "Blueprint"
-   - Connect your GitHub repository
-   - Use the included `render.yaml` configuration
+- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
+- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
 
-3. **Verify deployment:**
-   ```bash
-   node verify-deployment.js https://your-app-name.onrender.com/api
-   ```
+## Congratulations! :tada:
 
-### Detailed Deployment Instructions
+You've successfully run and modified your React Native App. :partying_face:
 
-See [DEPLOYMENT.md](DEPLOYMENT.md) for comprehensive deployment guide including:
-- Backend deployment to Render/Railway/Heroku
-- Frontend configuration for production
-- CI/CD pipeline setup
-- Environment variables configuration
-- Testing and verification steps
+### Now what?
 
-### Environment Variables (Production)
+- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
+- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
 
-```bash
-NODE_ENV=production
-JWT_SECRET=your-super-secret-32-character-key
-JWT_EXPIRES_IN=7d
-DATABASE_URL=postgresql://user:password@host:port/database
-```
+# Troubleshooting
 
-### Frontend Configuration
+If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
 
-Update the API URL in `frontend/TodoApp/src/services/api.ts`:
-```typescript
-const BASE_URL = __DEV__ 
-  ? 'http://localhost:3000/api'
-  : 'https://your-app-name.onrender.com/api';
-```
+# Learn More
 
-## 🔒 Security Features
+To learn more about React Native, take a look at the following resources:
 
-- JWT token authentication
-- Password hashing with bcrypt
-- Input validation and sanitization
-- CORS protection
-- Security headers with Helmet
-- SQL injection prevention with Sequelize ORM
-
-## 📱 Screenshots
-
-
-
-
-
-
-
-**Built with ❤️ for the Full-Stack Developer Challenge**
+- [React Native Website](https://reactnative.dev) - learn more about React Native.
+- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
+- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
+- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
+- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.

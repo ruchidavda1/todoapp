@@ -145,6 +145,16 @@ local.properties
 *.hprof
 .cxx/
 
+# iOS Build Artifacts
+ios/build/
+ios/DerivedData/
+ios/Pods/Pods.xcodeproj/xcuserdata/
+
+# Android Build Artifacts  
+android/build/
+android/app/build/
+android/.gradle/
+
 # Bundle artifacts
 *.jsbundle
 *.bundle

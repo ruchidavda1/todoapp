@@ -148,6 +148,13 @@ local.properties
 
 # Bundle artifacts
 *.jsbundle
+*.bundle
+main.jsbundle
+index.android.bundle
+index.ios.bundle
+
+# Ruby Bundle (if using Bundler)
+vendor/bundle/
 
 # CocoaPods
 /ios/Pods/

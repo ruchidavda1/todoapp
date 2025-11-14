@@ -7,6 +7,33 @@ A complete full-stack mobile Todo application built with React Native frontend a
 - **Database:** PostgreSQL on Render
 - **Status:** ✅ Fully deployed and working
 
+## 📱 **Screenshots**
+
+### iOS App Interface
+<div align="center">
+  <img src="screenshots/ios-login.png" alt="Login Screen" width="250"/>
+  <img src="screenshots/ios-signup.png" alt="Signup Screen" width="250"/>
+  <img src="screenshots/ios-todos.png" alt="Todo List" width="250"/>
+</div>
+
+<div align="center">
+  <img src="screenshots/ios-add-todo.png" alt="Add Todo" width="250"/>
+  <img src="screenshots/ios-profile.png" alt="User Profile" width="250"/>
+  <img src="screenshots/ios-dark-mode.png" alt="Dark Mode" width="250"/>
+</div>
+
+### Key Features Demo
+<div align="center">
+  <img src="screenshots/feature-auth.gif" alt="Authentication Flow" width="250"/>
+  <img src="screenshots/feature-crud.gif" alt="Todo CRUD Operations" width="250"/>
+  <img src="screenshots/feature-theme.gif" alt="Theme Switching" width="250"/>
+</div>
+
+### Backend API Testing
+<div align="center">
+  <img src="screenshots/api-postman.png" alt="API Testing with Postman" width="600"/>
+</div>
+
 ## 🚀 **Features**
 
 ### Frontend (React Native)
@@ -295,6 +322,23 @@ This project is licensed under the MIT License.
 - MobX team for reactive state management
 - Express.js for the robust backend framework
 - PostgreSQL for reliable data persistence
+
+## 📋 **Quick Screenshot Checklist**
+
+To complete the README documentation, capture these screenshots:
+
+- [ ] **ios-login.png** - Login screen with email/password fields
+- [ ] **ios-signup.png** - Signup screen with registration form
+- [ ] **ios-todos.png** - Main todo list with several todos
+- [ ] **ios-add-todo.png** - Add/edit todo screen
+- [ ] **ios-profile.png** - User profile management screen
+- [ ] **ios-dark-mode.png** - App in dark mode
+- [ ] **feature-auth.gif** - Login/signup flow demonstration
+- [ ] **feature-crud.gif** - Adding, editing, completing, deleting todos
+- [ ] **feature-theme.gif** - Switching between light and dark themes
+- [ ] **api-postman.png** - Backend API testing in Postman
+
+**Tip**: Use `Cmd + S` in iOS Simulator to quickly save screenshots!
 
 ---
 

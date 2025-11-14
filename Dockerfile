@@ -11,7 +11,7 @@ COPY . .
 
 # Change to backend directory and install dependencies
 WORKDIR /app/backend
-RUN npm ci --only=production
+RUN npm ci --omit=dev
 
 # Create a non-root user to run the application
 RUN addgroup -g 1001 -S nodejs

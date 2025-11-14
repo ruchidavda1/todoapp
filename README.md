@@ -316,5 +316,13 @@ The API service automatically switches between development and production URLs:
 - Security headers with Helmet
 - SQL injection prevention with Sequelize ORM
 
+## Development
+
+### AI-Assisted Development
+This project was developed with assistance from **Claude 4 Sonnet AI**(Cursor IDE), utilizing advanced AI capabilities for:
+- Architecture design and best practices implementation
+- Code optimization and debugging
+- Comprehensive testing strategies
+- Documentation and deployment automation
 
 Built with modern full-stack development practices

@@ -52,9 +52,7 @@ jspm_packages/
 
 # dotenv environment variables file
 .env
-.env.test
-.env.production
-.env.local
+
 
 # parcel-bundler cache
 .cache
@@ -113,6 +111,7 @@ node_modules/
 
 # dotenv environment variable files
 .env*
+!.env.example
 
 # React Native
 # OSX

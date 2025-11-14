@@ -1,50 +1,52 @@
-# 🔧 Render Deployment Fix - Dockerfile Issue
+# 🔧 Render Deployment Fix - Database Connection Issue
 
 ## Problem
 You're getting this error during Render deployment:
 ```
-error: failed to solve: failed to read dockerfile: open Dockerfile: no such file or directory
+Error: connect ECONNREFUSED ::1:5432
+Unable to start server: ConnectionRefusedError [SequelizeConnectionRefusedError]
 ```
 
 ## Root Cause
-Render is looking for a Dockerfile in the root directory, but your Dockerfile is in the `backend/` folder.
+The backend is trying to connect to a local PostgreSQL database (`::1:5432`) instead of the production database. This means the `DATABASE_URL` environment variable isn't set properly in Render.
 
-## ✅ Solution Options
+## ✅ Solution - Fix Database Connection
 
-### Option 1: Use the Root Dockerfile (Recommended)
-I've created a root-level Dockerfile that handles the backend deployment:
-
-```bash
-# The Dockerfile is now in your root directory
-# Just redeploy and it should work
-```
-
-### Option 2: Manual Render Setup (Guaranteed to Work)
-If the Blueprint still fails, use manual setup:
+### Step 1: Create PostgreSQL Database First
+**You MUST create the database before the web service:**
 
 1. **Go to Render Dashboard**
 2. **Create PostgreSQL Database:**
    - Click "New +" → "PostgreSQL"
    - Name: `todo-postgres`
    - Plan: Free
-   - Copy the connection string
+   - **Wait for it to be fully created**
+   - Copy the **External Database URL** (not Internal)
 
-3. **Create Web Service:**
-   - Click "New +" → "Web Service"
-   - Connect your GitHub repository
-   - **Important Settings:**
-     - **Root Directory:** `backend`
-     - **Environment:** Node
-     - **Build Command:** `npm install`
-     - **Start Command:** `npm start`
+### Step 2: Update Web Service Environment Variables
+**CRITICAL:** Make sure you're using the **External Database URL**, not the Internal one.
 
-4. **Set Environment Variables:**
+1. **Go to your Web Service in Render Dashboard**
+2. **Go to Environment tab**
+3. **Add/Update these environment variables:**
    ```
    NODE_ENV=production
    JWT_SECRET=your-super-secret-32-character-key-here
    JWT_EXPIRES_IN=7d
-   DATABASE_URL=[paste-your-postgres-connection-string]
+   DATABASE_URL=postgresql://username:password@hostname:port/database
    ```
+
+### Step 3: Get the Correct Database URL
+1. **Go to your PostgreSQL database in Render**
+2. **Copy the "External Database URL"** (it should look like):
+   ```
+   postgresql://todo_user_xyz:abc123@dpg-xyz.oregon-postgres.render.com:5432/todo_postgres_xyz
+   ```
+3. **Paste this EXACT URL as your DATABASE_URL**
+
+### Step 4: Redeploy
+- Go to your Web Service
+- Click "Manual Deploy" → "Deploy latest commit"
 
 ### Option 3: Alternative Hosting Platforms
 

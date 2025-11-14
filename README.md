@@ -6,6 +6,8 @@ A complete full-stack mobile Todo application built with React Native frontend a
 - **Backend API:** https://todoapp-2zsx.onrender.com/api
 - **Database:** PostgreSQL on Render
 - **Status:** Fully deployed and working
+- **CI/CD:** Automated deployment via GitHub Actions
+- **Auto-Deploy:** Every push to main triggers automatic deployment
 
 ## Screenshots
 
@@ -47,6 +49,8 @@ A complete full-stack mobile Todo application built with React Native frontend a
 - Security: Helmet, CORS, and bcrypt for password hashing
 - Middleware: Authentication middleware for protected routes
 - Docker Support: Containerized application for easy deployment
+- **CI/CD Pipeline**: Automated GitHub Actions workflow with testing and deployment
+- **Auto-Deployment**: Automatic deployment to Render on every push to main branch
 
 ## Tech Stack
 
@@ -271,7 +275,20 @@ cd frontend/TodoApp
 npm test
 ```
 
-## Deployment
+## Automated CI/CD & Deployment
+
+### Fully Automated Pipeline
+- **GitHub Actions**: Automated testing and deployment on every push to main
+- **Render Integration**: Automatic deployment to production environment
+- **Zero-downtime**: Seamless updates with health checks
+- **Live Status**: [https://todoapp-2zsx.onrender.com/api/health](https://todoapp-2zsx.onrender.com/api/health)
+
+### CI/CD Workflow
+1. **Code Push** → GitHub repository
+2. **Automated Testing** → Backend tests with PostgreSQL
+3. **Docker Build** → Containerized application
+4. **Deploy to Render** → Live production environment
+5. **Health Verification** → Automatic status checks
 
 The application is configured for deployment on Render using the included `render.yaml` configuration.
 
